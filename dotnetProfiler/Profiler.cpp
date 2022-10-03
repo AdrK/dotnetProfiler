@@ -21,7 +21,7 @@ PROFILER_STUB TailcallStub(FunctionID functionId, COR_PRF_ELT_INFO eltInfo)
 
 #ifdef _X86_
 #ifdef _WIN32
-void __declspec(naked) EnterNaked(FunctionIDOrClientID functionIDOrClientID, COR_PRF_ELT_INFO eltInfo)
+__declspec(naked) void STDMETHODCALLTYPE  EnterNaked(FunctionIDOrClientID functionIDOrClientID, COR_PRF_ELT_INFO eltInfo)
 {
     __asm
     {
@@ -37,7 +37,7 @@ void __declspec(naked) EnterNaked(FunctionIDOrClientID functionIDOrClientID, COR
     }
 }
 
-void __declspec(naked) LeaveNaked(FunctionIDOrClientID functionIDOrClientID, COR_PRF_ELT_INFO eltInfo)
+__declspec(naked) void STDMETHODCALLTYPE LeaveNaked(FunctionIDOrClientID functionIDOrClientID, COR_PRF_ELT_INFO eltInfo)
 {
     __asm
     {
@@ -53,7 +53,7 @@ void __declspec(naked) LeaveNaked(FunctionIDOrClientID functionIDOrClientID, COR
     }
 }
 
-void __declspec(naked) TailcallNaked(FunctionIDOrClientID functionIDOrClientID, COR_PRF_ELT_INFO eltInfo)
+__declspec(naked) void STDMETHODCALLTYPE TailcallNaked(FunctionIDOrClientID functionIDOrClientID, COR_PRF_ELT_INFO eltInfo)
 {
     __asm
     {
